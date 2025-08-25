@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserInputComponent } from "./user-input/user-input.component";
 import { InvestmentParameters } from './investment-input.model';
@@ -23,21 +23,52 @@ export interface InvestmentResult {
 
 
 export class AppComponent {
- //property to save results
-  resultsData: InvestmentResult[] = [];
-  onCalculateInvestmentResults(data: InvestmentParameters) {
+ // Property to save results
+
+   // resultsData: InvestmentResult[] = [];
+ // Stateful data
+
+
+ 
+ // Signal (Reactive State) for investment results data
+
+/**
+ * A reactive signal holding an array of `InvestmentResult` objects.
+ * Used to store and update the results of investment calculations.
+ *
+ * @remarks
+ * The signal allows for automatic change detection and reactivity within Angular components.
+ *
+ * @see {@link InvestmentResult}
+ */
+resultsData = signal<InvestmentResult[]>([]);
 
 
   /**
-   * Destructures the `data` object to extract investment parameters.
+   * Calculates annual investment results based on provided investment parameters.
    *
-   * @param data - An object containing investment details.
-   * @property initialInvestment - The initial amount invested.
-   * @property annualInvestment - The amount invested annually.
-   * @property expectedReturn - The expected annual return rate (as a percentage or decimal).
-   * @property duration - The investment duration in years.
+   * This method computes the investment value, interest earned, total interest,
+   * and total amount invested for each year over the specified duration.
+   * The results are stored in the `resultsData` property.
+   *
+   * @param data - The investment parameters.
+   * @param data.initialInvestment - The initial amount invested.
+   * @param data.annualInvestment - The amount invested annually.
+   * @param data.expectedReturn - The expected annual return rate (percentage).
+   * @param data.duration - The investment duration in years.
    */
+  onCalculateInvestmentResults(data: InvestmentParameters) {
+    /**
+     * Destructures the `data` object to extract investment parameters.
+     *
+     * @param data - An object containing investment details.
+     * @param data.initialInvestment - The initial amount invested.
+     * @param data.annualInvestment - The amount invested annually.
+     * @param data.expectedReturn - The expected annual return rate (as a percentage or decimal).
+     * @param data.duration - The investment duration in years.
+     */
   const { initialInvestment, annualInvestment, expectedReturn, duration } = data;
+
   const annualData = [];
   let investmentValue = initialInvestment;
 
@@ -57,7 +88,8 @@ export class AppComponent {
     });
   }
   //console.log(annualData);
-  this.resultsData = annualData;
+ // this.resultsData = annualData;
+ this.resultsData.set(annualData);
 }
 
 }

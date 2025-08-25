@@ -1,7 +1,10 @@
 <app-header/>
 <app-user-input (calculateInvestmentResults)="onCalculateInvestmentResults($event)"/>
 
-<app-investment-results [investmentResultsData]="resultsData"/>
+<app-investment-results [investmentResultsData]="resultsData()"/>
+<!-- 
+  `resultsData` is a signal, so we call it as a function to get its current value.
+-->
 <!-- property binding
 https://angular.dev/guide/templates/binding#property-binding
 -->
