@@ -1,0 +1,7 @@
+<app-header/>
+<app-user-input (calculateInvestmentResults)="onCalculateInvestmentResults($event)"/>
+
+<app-investment-results [investmentResultsData]="resultsData"/>
+<!-- property binding
+https://angular.dev/guide/templates/binding#property-binding
+-->
