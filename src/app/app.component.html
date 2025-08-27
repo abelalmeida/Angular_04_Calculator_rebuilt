@@ -1,7 +1,27 @@
 <app-header/>
-<app-user-input (calculateInvestmentResults)="onCalculateInvestmentResults($event)"/>
+<!-- <app-user-input (calculateInvestmentResults)="onCalculateInvestmentResults($event)"/> -->
+<app-user-input/>
+<!--
+  The `(calculateInvestmentResults)` is a custom event defined in the `app-user-input` component.
+  When this event is emitted, it triggers the `onCalculateInvestmentResults` method in this app.component,
+  passing the event data as an argument.
+  https://angular.dev/guide/templates/event-listeners
+  
+-->
 
-<app-investment-results [investmentResultsData]="resultsData"/>
+<!-- <app-investment-results [investmentResultsData]="resultsData"/> -->
+
+<app-investment-results/>
+<!--
+  So every time `resultsData` changes, the new value is passed to the
+  `investmentResultsData` property of the `app-investment-results` component.
+
+  This is an example of Angular's property binding, where the value of a
+  component's property is bound to a template expression. In this case,
+  `investmentResultsData` is bound to the `resultsData` property of the
+  parent `app.component`.
+-->
+
 <!-- property binding
 https://angular.dev/guide/templates/binding#property-binding
 -->

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InvestmentParameters } from '../investment-input.model';
+import { InvestmentService } from '../investment.service';
          
 
 
@@ -32,8 +33,12 @@ export class UserInputComponent {
    * 
    * @eventProperty
    */
-  @Output() calculateInvestmentResults = new EventEmitter<InvestmentParameters>();
-  // }>();
+
+// calculateInvestmentResults = output<InvestmentParameters>();
+
+
+// add constructor
+constructor(private investmentService: InvestmentService) {}
 
 
   // @Input() initialInvestment: string = '0'
@@ -54,23 +59,29 @@ export class UserInputComponent {
    * - Logs the submission and data to the console for debugging purposes.
    */
   onSubmit(){
-  
-    
-   this.calculateInvestmentResults.emit({
+  //  this.calculateInvestmentResults.emit({
+  //    initialInvestment: +this.initialInvestment,
+  //    annualInvestment: +this.annualInvestment,
+  //    expectedReturn: +this.expectedReturn,
+  //    duration: +this.duration
+  //  });
+
+     this.investmentService.calculateInvestmentResults({
      initialInvestment: +this.initialInvestment,
      annualInvestment: +this.annualInvestment,
      expectedReturn: +this.expectedReturn,
      duration: +this.duration
    });
 
-   //
-  //  console.log('Form submitted');
-  //  console.log('Data:', {
-  //    initialInvestment: +this.initialInvestment,
-  //    annualInvestment: +this.annualInvestment,
-  //    expectedReturn: +this.expectedReturn,
-  //    duration: +this.duration
-  //  });
+
+   
+   console.log('Form submitted');
+   console.log('Data:', {
+     initialInvestment: +this.initialInvestment,
+     annualInvestment: +this.annualInvestment,
+     expectedReturn: +this.expectedReturn,
+     duration: +this.duration
+   });
   }
 
 }

@@ -28,7 +28,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 
-## Instructions:
+## Calculator Application:
+- The Calculator app project very small to focus using components in the Angular framework to use @Input and @Output properties:
+- ![Calculator App Screenshot](public\CalculatorApplication.png)
+
+- this project was created to learn Angular's framework using using only 3 components such as:
+- 1. Header
+- 2. User-Input
+- 3. Results-Ouput
+
+- ![Calculator App Screenshot](public\AngularComponentStructure.png)
+
+
 
 Create components
 - 1 header check the image 
