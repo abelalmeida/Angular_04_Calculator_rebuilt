@@ -11,6 +11,7 @@ import { Component, Input } from '@angular/core';
 
 export class InvestmentResultsComponent {
   // Input property to receive the investment results data from the parent component
+  // https://angular.dev/reference/migrations/signal-inputs
   @Input() investmentResultsData: {
     year: number;
     interest: number;

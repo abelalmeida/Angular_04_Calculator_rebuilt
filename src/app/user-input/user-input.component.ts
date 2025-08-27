@@ -31,9 +31,11 @@ export class UserInputComponent {
    * to its parent component. The payload is of type {@link InvestmentParameters}.
    * 
    * @eventProperty
+   * https://angular.dev/reference/migrations/outputs
+   * 
    */
   @Output() calculateInvestmentResults = new EventEmitter<InvestmentParameters>();
-  // }>();
+  
 
 
   // @Input() initialInvestment: string = '0'
