@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, inject, Input, input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { InvestmentService } from '../investment.service';
 
 @Component({

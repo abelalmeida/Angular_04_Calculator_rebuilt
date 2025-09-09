@@ -12,6 +12,7 @@ export class InvestmentService {
   resultsData: InvestmentResult[] = [];
  // gather the data entered and process it
 
+  test =  'test';
 
   constructor() { }
 

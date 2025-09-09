@@ -6,14 +6,13 @@ import { InvestmentService } from '../investment.service';
 
 
 @Component({
-  selector: 'app-user-input',
+  selector: 'appUserInput',
   standalone: true,
   imports: [FormsModule],
   templateUrl: './user-input.component.html',
   styleUrl: './user-input.component.css'
 })
 export class UserInputComponent {
-
   
   // USE A custom event to communicate from child to parent component.
   // Use the @Output() decorator to emit a custom event from the UserInputComponent to the parent.
