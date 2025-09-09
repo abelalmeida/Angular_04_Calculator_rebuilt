@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserInputComponent } from "./user-input/user-input.component";
-import { InvestmentParameters } from './investment-input.model';
 import { InvestmentResultsComponent } from './investment-results/investment-results.component';
 
 // Define InvestmentResult interface
