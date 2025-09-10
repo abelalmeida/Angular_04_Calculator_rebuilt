@@ -68,3 +68,14 @@ Create components
     src/app/user-input/user-input.component.html:17:59:
       17 │ ...er" id="duration" name="duration" [(ngModel)]="duration" required>
          ╵                                      ~~~~~~~~~~~~~~~~~~~~~~
+
+
+## ESLINT
+https://eslint.org/
+Help Needed: Enabling Inline Template Linting with ESLint Flat Config for Angular
+
+I've removed all eslint and tslint dependencies including the eslint.config.json and did a complete fresh installation via
+
+> ng add angular-eslint
+
+https://www.reddit.com/r/angular/comments/1j6hn8l/help_needed_enabling_inline_template_linting_with/?rdt=40235

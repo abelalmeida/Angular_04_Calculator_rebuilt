@@ -14,7 +14,7 @@ export class InvestmentService {
 
   test =  'test';
 
-  constructor() { }
+  // constructor() { }
 
 
   calculateInvestmentResults(data: InvestmentParameters) {
