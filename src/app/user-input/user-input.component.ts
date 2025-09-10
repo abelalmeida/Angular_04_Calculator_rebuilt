@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Input, output, Output } from '@angular/core';
+import { Component ,inject} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { InvestmentParameters } from '../investment-input.model';
-         
+import { InvestmentService } from '../investment.service';
+
 
 
 @Component({
@@ -12,7 +12,6 @@ import { InvestmentParameters } from '../investment-input.model';
   styleUrl: './user-input.component.css'
 })
 export class UserInputComponent {
-
   
   // USE A custom event to communicate from child to parent component.
   // Use the @Output() decorator to emit a custom event from the UserInputComponent to the parent.
@@ -32,8 +31,12 @@ export class UserInputComponent {
    * 
    * @eventProperty
    */
-  @Output() calculateInvestmentResults = new EventEmitter<InvestmentParameters>();
-  // }>();
+
+// calculateInvestmentResults = output<InvestmentParameters>();
+
+
+// add constructor
+investmentService = inject(InvestmentService);
 
 
   // @Input() initialInvestment: string = '0'
@@ -54,23 +57,29 @@ export class UserInputComponent {
    * - Logs the submission and data to the console for debugging purposes.
    */
   onSubmit(){
-  
-    
-   this.calculateInvestmentResults.emit({
+  //  this.calculateInvestmentResults.emit({
+  //    initialInvestment: +this.initialInvestment,
+  //    annualInvestment: +this.annualInvestment,
+  //    expectedReturn: +this.expectedReturn,
+  //    duration: +this.duration
+  //  });
+
+     this.investmentService.calculateInvestmentResults({
      initialInvestment: +this.initialInvestment,
      annualInvestment: +this.annualInvestment,
      expectedReturn: +this.expectedReturn,
      duration: +this.duration
    });
 
-   //
-  //  console.log('Form submitted');
-  //  console.log('Data:', {
-  //    initialInvestment: +this.initialInvestment,
-  //    annualInvestment: +this.annualInvestment,
-  //    expectedReturn: +this.expectedReturn,
-  //    duration: +this.duration
-  //  });
+
+   
+   console.log('Form submitted');
+   console.log('Data:', {
+     initialInvestment: +this.initialInvestment,
+     annualInvestment: +this.annualInvestment,
+     expectedReturn: +this.expectedReturn,
+     duration: +this.duration
+   });
   }
 
 }

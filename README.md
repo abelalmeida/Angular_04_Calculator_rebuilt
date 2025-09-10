@@ -28,7 +28,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 
-## Instructions:
+## Calculator Application:
+- The Calculator app project very small to focus using components in the Angular framework to use @Input and @Output properties:
+- ![Calculator App Screenshot](public\CalculatorApplication.png)
+
+- this project was created to learn Angular's framework using using only 3 components such as:
+- 1. Header
+- 2. User-Input
+- 3. Results-Ouput
+
+- ![Calculator App Screenshot](public\AngularComponentStructure.png)
+
+
 
 Create components
 - 1 header check the image 
@@ -57,3 +68,14 @@ Create components
     src/app/user-input/user-input.component.html:17:59:
       17 │ ...er" id="duration" name="duration" [(ngModel)]="duration" required>
          ╵                                      ~~~~~~~~~~~~~~~~~~~~~~
+
+
+## ESLINT
+https://eslint.org/
+Help Needed: Enabling Inline Template Linting with ESLint Flat Config for Angular
+
+I've removed all eslint and tslint dependencies including the eslint.config.json and did a complete fresh installation via
+
+> ng add angular-eslint
+
+https://www.reddit.com/r/angular/comments/1j6hn8l/help_needed_enabling_inline_template_linting_with/?rdt=40235

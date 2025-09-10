@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  title = 'Investment Calculator';
+  title = 'Investment Calculator!!';
 }
